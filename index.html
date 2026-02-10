@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Hau Vu | Data Analyst & Business Intelligence Developer | Python, SQL, AWS</title>
+    <meta content="Hau Vu is a data analyst specializing in Python, SQL, Power BI, and cloud platforms (AWS, GCP). Explore data-driven projects including crypto analytics, GA4 reporting, customer churn analysis, and interactive dashboards." name="description">
+    <meta content="Hau Vu, data analyst, business intelligence, Python developer, SQL analyst, Power BI dashboards, AWS data engineer, Google Analytics GA4, customer churn analysis, crypto analytics, React developer, data visualization, portfolio" name="keywords">
+    <meta name="author" content="Hau Vu">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.hauvu.space/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hauvu.space/">
+    <meta property="og:title" content="Hau Vu | Data Analyst & BI Developer Portfolio">
+    <meta property="og:description" content="Data analyst specializing in Python, SQL, Power BI, and cloud platforms. Explore projects in crypto analytics, GA4 reporting, and interactive dashboards.">
+    <meta property="og:image" content="https://publicstoragehau.s3.us-east-2.amazonaws.com/Subject.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Hau Vu Portfolio">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hau Vu | Data Analyst & BI Developer Portfolio">
+    <meta name="twitter:description" content="Data analyst specializing in Python, SQL, Power BI, and cloud platforms. Explore projects in crypto analytics, GA4 reporting, and interactive dashboards.">
+    <meta name="twitter:image" content="https://publicstoragehau.s3.us-east-2.amazonaws.com/Subject.png">
+
+    <!-- Favicon -->
+    <link href="assets/img/icon1.png" rel="icon">
+    <link href="assets/img/icon1.png" rel="apple-touch-icon">
+    
+    <!-- Vendor CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KLHFJZXV');
+    </script>
+    <!-- End Google Tag Manager -->
+    
+
+    <style>
+        /* Portfolio Section Styles */
+        .portfolio .portfolio-item {
+            margin-bottom: 30px;
+        }
+
+        .portfolio #portfolio-flters {
+            margin: 0 auto 25px auto;
+            list-style: none;
+            text-align: center;
+            background: #fff;
+            border-radius: 50px;
+        }
+
+        .portfolio #portfolio-flters li {
+            cursor: pointer;
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1;
+            text-transform: uppercase;
+            color: #272829;
+            margin-bottom: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .portfolio #portfolio-flters li:hover,
+        .portfolio #portfolio-flters li.filter-active {
+            color: #0563bb;
+        }
+
+        .portfolio .portfolio-wrap {
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            background: rgba(69, 80, 91, 0.8);
+        }
+
+        .portfolio .portfolio-wrap::before {
+            content: "";
+            background: rgba(255, 255, 255, 0.7);
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 30px;
+            bottom: 30px;
+            transition: all ease-in-out 0.3s;
+            z-index: 2;
+            opacity: 0;
+        }
+
+        .portfolio .portfolio-wrap .portfolio-info {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            z-index: 3;
+            transition: all ease-in-out 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portfolio .portfolio-wrap .portfolio-info::before {
+            display: block;
+            content: "";
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            border-top: 3px solid #d7dce1;
+            border-left: 3px solid #d7dce1;
+            transition: all 0.5s ease 0s;
+            z-index: 9994;
+        }
+
+        .portfolio .portfolio-wrap .portfolio-info::after {
+            display: block;
+            content: "";
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            bottom: 35px;
+            right: 35px;
+            border-bottom: 3px solid #d7dce1;
+            border-right: 3px solid #d7dce1;
+            transition: all 0.5s ease 0s;
+            z-index: 9994;
+        }
+
+        .portfolio .portfolio-wrap .portfolio-info h4 {
+            font-size: 20px;
+            color: #45505b;
+            font-weight: 600;
+        }
+
+        .portfolio .portfolio-wrap .portfolio-info p {
+            color: #45505b;
+            font-size: 14px;
+            text-transform: uppercase;
+            padding: 0;
+            margin: 0;
+        }
+
+        .portfolio .portfolio-wrap .portfolio-links {
+            text-align: center;
+            z-index: 4;
+        }
+
+        .portfolio .portfolio-wrap .portfolio-links a {
+            color: #45505b;
+            margin: 0 2px;
+            font-size: 28px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .portfolio .portfolio-wrap .portfolio-links a:hover {
+            color: #148af9;
+        }
+
+        .portfolio .portfolio-wrap:hover::before {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 1;
+        }
+
+        .portfolio .portfolio-wrap:hover .portfolio-info {
+            opacity: 1;
+        }
+
+        .portfolio .portfolio-wrap:hover .portfolio-info::before {
+            top: 15px;
+            left: 15px;
+        }
+
+        .portfolio .portfolio-wrap:hover .portfolio-info::after {
+            bottom: 15px;
+            right: 15px;
+        }
+
+        /* Inviting Image Animation */
+        .inviting-image {
+            display: inline-block;
+            animation: moveSideToSide 1.5s ease-in-out infinite;
+        }
+
+        @keyframes moveSideToSide {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+        }
+
+        .inviting-image:hover {
+            animation: none;
+            transform: scale(1.1);
+        }
+
+        /* Quote Style */
+        .quote {
+            font-family: "Pacifico", cursive;
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 0;
+            font-weight: 400;
+            align-content: center;
+            justify-content: center;
+        }
+
+        /* Responsive: Hide on small screens */
+        @media only screen and (max-width: 1024px) {
+            .hide-on-small-screens {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- Structured Data - JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Hau Vu",
+        "url": "https://www.hauvu.space",
+        "jobTitle": "Data Analyst",
+        "description": "Data analyst specializing in Python, SQL, Power BI, and cloud platforms (AWS, GCP), delivering data-driven insights and scalable business intelligence solutions.",
+        "knowsAbout": ["Data Analysis", "Business Intelligence", "Python", "SQL", "Power BI", "AWS", "Google Cloud Platform", "React", "Node.js", "Machine Learning", "Google Analytics", "Customer Analytics", "Crypto Analytics"],
+        "sameAs": [],
+        "image": "https://publicstoragehau.s3.us-east-2.amazonaws.com/Subject.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Hau Vu Portfolio",
+        "url": "https://www.hauvu.space",
+        "description": "Portfolio of Hau Vu - Data Analyst and Business Intelligence Developer"
+    }
+    </script>
+</head>
+
+<body>
+
+<!-- Header -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+        <a href="#" class="logo">
+            <img src="assets/img/logo1.png" alt="Hau Vu Logo" class="img-fluid">
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                <li><a class="nav-link scrollto" href="#about">About Me</a></li>
+                <li><a class="nav-link scrollto" href="#work">Portfolio</a></li>
+                <li><a class="nav-link scrollto" href="#blog">My Blog</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<div id="hero" class="hero route bg-image" style="position: relative;">
+    <video autoplay muted loop id="bg-video"
+           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+        <source src="assets/bg6.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <div class="hero-content display-table">
+        <div class="table-cell">
+            <div class="container">
+                <h1 class="hero-title mb-4">I am Hau Vu</h1>
+                <!-- <p class="hero-subtitle" style="color: #fff; font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+                    Data Analyst & Business Intelligence Developer — turning raw data into actionable insights with Python, SQL, and cloud platforms.
+                </p> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<main id="main">
+        <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLHFJZXV"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- About Section -->
+    <section id="about" class="about-mf sect-pt4 route">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box-shadow-full">
+                        <div class="row">
+                            <div class="col-md-2" style="padding-right: -12px">
+                                <div class="skill-mf m-2 align-content-end">
+                                    <br>
+                                    <img src="https://publicstoragehau.s3.us-east-2.amazonaws.com/Subject.png"
+                                         class="img-fluid rounded b-shadow-a hide-on-small-screens" 
+                                         alt="Hau Vu - Data Analyst and Business Intelligence Developer"
+                                         width="200">
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="about-me pt-4 pt-md-0">
+                                    <div class="title-box-2">
+                                        <h2 class="title-left">About me</h2>
+                                    </div>
+
+                                    <p class="lead">
+                                        <p>
+  Data analyst and business intelligence developer with a background in economics and finance. I build <strong>data pipelines</strong>, <strong>interactive dashboards</strong>, and <strong>automated reporting systems</strong> that help organizations make smarter, data-driven decisions. My work spans <strong>customer churn analysis</strong>, <strong>crypto exchange reporting</strong>, <strong>Google Analytics (GA4) insights</strong>, and <strong>credit risk modeling with Power BI</strong>.
+</p>
+
+<p>
+  I leverage AI-assisted workflows—including <strong>OpenAI APIs</strong>, <strong>Claude Code</strong>, and <strong>structured prompt systems</strong>—to accelerate development and analysis. My technical stack includes <strong>Python</strong>, <strong>React</strong>, <strong>Node.js</strong>, <strong>SQL</strong>, <strong>RESTful APIs</strong>, and <strong>cloud platforms</strong> (<strong>AWS</strong>, <strong>GCP</strong>), enabling me to deliver scalable, production-ready solutions from data ingestion to visualization.
+</p>
+                                    
+                                    <a href="https://publicstoragehau.s3.us-east-2.amazonaws.com/Hau+Vu+(1).pdf" 
+                                       style="color:#148af9" 
+                                       class="image-container"
+                                       target="_blank">
+                                        View my CV <i class="bi bi-file-earmark-person"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="work" class="portfolio-mf sect-pt4 route">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-box text-center">
+                        <h2 class="title-a">Portfolio</h2>
+                        <p class="subtitle-a">Data analytics projects, dashboards, and applications built with Python, SQL, React, and cloud technologies.</p>
+                        <div class="line-mf"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Crypto Exchange Report -->
+                <!-- <div class="col-md-4">
+                    <div class="work-box">
+                        <a href="assets/img/taska.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                            <div class="work-img">
+                                <img src="assets/img/cryto1.png" alt="Crypto Exchange Analytics Report built with Django, pandas, and AWS S3" class="img-fluid">
+                            </div>
+                        </a>
+                        <div class="work-content">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h2 class="w-title">Crypto Exchange Report</h2>
+                                    <div>
+                                        <span>Django, numpy, pandas, SQL, S3</span>
+                                    </div>
+                                    <div>
+                                        <a href="#" target="_blank">
+                                            <span class="w-ctegory" style="color:#148af9">Project Documents</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="w-like">
+                                        <a href="https://testflight.apple.com/join/coLcuybB">
+                                            <span class="bi bi-plus-circle"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- GA4 Report -->
+                <div class="col-md-4">
+                    <div class="work-box">
+                        <a href="#" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                            <div class="work-img">
+                                <img src="assets/img/ga41.png" alt="Google Analytics GA4 reporting dashboard built with React and Python" class="img-fluid">
+                            </div>
+                        </a>
+                        <div class="work-content">
+                            <div class="row">
+                                <a href="#" target="_blank">
+                                <div class="col-sm-8">
+                                    <h2 class="w-title">GA4 Report</h2>
+                                    <div>
+                                        <span>React, Python</span>
+                                    </div>
+                                    <!-- <div>
+                                        <a href="#" target="_blank">
+                                            <span class="w-ctegory" style="color:#148af9">Project Documents</span>
+                                        </a>
+                                    </div> -->
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="w-like">
+                                        <!-- <a href="#"><span class="bi bi-plus-circle"></span></a> -->
+                                    </div>
+                                </div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PowerBI Credit Analysis -->
+                <!-- <div class="col-md-4">
+                    <div class="work-box">
+                        <a href="assets/img/dall9.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                            <div class="work-img">
+                                <img src="assets/img/powerbi1.png" alt="Power BI credit risk analysis dashboard with data visualization" class="img-fluid">
+                            </div>
+                        </a>
+                        <div class="work-content">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h2 class="w-title">PowerBI Credit Analysis</h2>
+                                    <div class="w-more">
+                                        <span class="w-ctegory">Personal Project</span> / <span class="w-date">2025</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="w-like">
+                                        <a href="portfolio-details.html"><span class="bi bi-plus-circle"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Jupyter Notebook - Churn Customer Report -->
+                <!-- <div class="col-md-4">
+                    <div class="work-box">
+                        <a href="assets/img/taska.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                            <div class="work-img">
+                                <img src="assets/img/dall10.png" alt="Customer churn prediction analysis using Jupyter Notebook and Python" class="img-fluid">
+                            </div>
+                        </a>
+                        <div class="work-content">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h2 class="w-title">Jupyter Notebook - Churn Customer Report</h2>
+                                    <div class="w-more">
+                                        <span class="w-ctegory">Freelance</span> / <span class="w-date">2025</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="w-like">
+                                        <a href="https://testflight.apple.com/join/coLcuybB">
+                                            <span class="bi bi-plus-circle"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Kangaroo Math App -->
+                <div class="col-md-4">
+                    <div class="work-box">
+                        <a href="https://nobody541.github.io/workbook-k/" target="_blank">
+                            <div class="work-img">
+                                <img src="assets/img/workbook.png" alt="Kangaroo Math educational app for interactive math learning" class="img-fluid">
+                            </div>
+                        </a>
+                        <div class="work-content">
+                            <div class="row">
+                                <a href="https://nobody541.github.io/workbook-k/" target="_blank">
+                                <div class="col-sm-8">
+                                    <h2 class="w-title">Kids Workbook</h2>
+                                    <!-- <div class="w-more">Project Documents</div> -->
+                                    <div>
+                                        <span>Education / 2025</span>
+                                    </div>
+                                    <div class="w-more">
+                                        <!-- <span class="w-ctegory">html, css, js</span> -->
+                                    </div>
+                                </div></a>
+                                <div class="col-sm-4">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Farm Fresh App -->
+                <div class="col-md-4">
+                    <div class="work-box">
+                        <a href="https://nobody541.github.io/gre-vocabulary/" target="_blank">
+                            <div class="work-img">
+                                <img src="assets/img/gre.png" alt="GRE Vocabulary Trainer - interactive study tool for GRE test preparation" class="img-fluid">
+                            </div>
+                        </a>
+                        <div class="work-content">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h2 class="w-title"><a href="https://nobody541.github.io/gre-vocabulary/" target="_blank">
+                                            <span class="bi bi-plus-circle"></span>
+                                        GRE Vocabulary Trainer</a></h2>
+                                    <div class="w-more">
+                                        <span class="w-ctegory">Education</span> / <span class="w-date">2026</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="w-like">
+                                        <a href="https://nobody541.github.io/gre-vocabulary/" target="_blank">
+                                            <!-- <span class="bi bi-plus-circle"></span> -->
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-mf sect-pt4 route">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-box text-center">
+                        <h2 class="title-a">Life Journey</h2>
+                        <!-- <p class="subtitle-a">Insights on data analytics, learning journeys, and personal reflections.</p> -->
+                        <div class="line-mf"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Learn With Me -->
+                <div class="col-md-4">
+                    <div class="card card-blog">
+                        <div class="card-img">
+                            <a href="https://nobody541.github.io/study-hub/" target="_blank">
+                                <img src="assets/img/learn.jpg" alt="Learning" class="img-fluid">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category-box">
+                                <div class="card-category">
+                                    <h6 class="category">Me & Learning</h6>
+                                </div>
+                            </div>
+                            <h3 class="card-title">
+                                <a href="https://nobody541.github.io/study-hub/" target="_blank">Learn With Me</a>
+                            </h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="post-author">
+                                <a href="https://nobody541.github.io/study-hub/">
+                                    <img src="assets/img/book1.png" alt="Learning" class="avatar rounded-circle">
+                                    <span class="author">Study Video • Certificates Collection</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Blog -->
+                <div class="col-md-4">
+                    <div class="card card-blog">
+                        <div class="card-img">
+                            <a href="https://nobody541.github.io/family/" target="_blank">
+                                <img src="assets/img/fam3.png" alt="Family" class="img-fluid">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category-box">
+                                <div class="card-category">
+                                    <h6 class="category">Me & Family</h6>
+                                </div>
+                            </div>
+                            <h3 class="card-title">
+                                <a href="https://nobody541.github.io/family/" target="_blank">Cherished Moments & Stories</a>
+                            </h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="post-author">
+                                <a href="#">
+                                    <img src="assets/img/dall9.png" alt="Family" class="avatar rounded-circle">
+                                    <span class="author">Photos, Videos, & Stories</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mindfulness Moments -->
+                <div class="col-md-4">
+                    <div class="card card-blog">
+                        <div class="card-img">
+                            <a href="https://nobody541.github.io/blog/" target="_blank">
+                                <img src="assets/img/mind2.jpg" alt="Mindfulness" class="img-fluid">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category-box">
+                                <div class="card-category">
+                                    <h6 class="category">Me & Myself</h6>
+                                </div>
+                            </div>
+                            <h3 class="card-title">
+                                <a href="https://nobody541.github.io/blog/" target="_blank">Thoughtstream</a>
+                            </h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="post-author">
+                                <a href="#">
+                                    <img src="assets/img/book.png" alt="Books" class="avatar rounded-circle">
+                                    <span class="author">Books, Thoughts & Beyond</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="lci">
+                    <img src="assets/img/footer19.png" id="logo" width="200" alt="Hau Vu Data Analyst Portfolio - Footer Logo">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Preloader and Back to Top -->
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+</a>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/typed.js/typed.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+
+<script>
+    // Testimonials Slider Configuration
+    var swiper = new Swiper('.testimonials-slider', {
+        slidesPerView: 1,
+        centeredSlides: true,
+        loop: true,
+        spaceBetween: 0,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+</script>
+
+</body>
+</html>
